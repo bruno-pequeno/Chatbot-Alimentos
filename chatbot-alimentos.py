@@ -4,7 +4,7 @@ import os
 
 class FoodChatbot:
     def __init__(self):
-        genai.configure(api_key="AIzaSyCNpKQEOaEA7VOGdvMVTvf_3WVzOHWDO2g")
+        genai.configure(api_key="")
         self.model = genai.GenerativeModel('gemini-pro')
         
     def generate_response(self, user_input):
@@ -18,7 +18,7 @@ class FoodChatbot:
             **Benefícios:**
             {{beneficios}}
 
-            **Receita simples**
+            **Receita simples com {user_input}**
             **Ingredientes:**
             {{ingredientes}}
 
