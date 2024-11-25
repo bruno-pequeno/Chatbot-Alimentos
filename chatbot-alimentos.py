@@ -18,7 +18,7 @@ class FoodChatbot:
             **Benefícios:**
             {{beneficios}}
 
-            **Agora uma receita simples**
+            **Receita simples**
             **Ingredientes:**
             {{ingredientes}}
 
