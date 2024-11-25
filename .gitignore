@@ -1,3 +1,4 @@
 .gradio/
 models/
 chatbot-alimento.py
+/olds.txt
