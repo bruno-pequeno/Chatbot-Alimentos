@@ -4,12 +4,13 @@ import os
 
 class FoodChatbot:
     def __init__(self):
-        genai.configure(api_key="")
+        genai.configure(api_key="AIzaSyBRtDJWfpnJaQ9sblV9NG7pu_-fkg5wefA")
         self.model = genai.GenerativeModel('gemini-pro')
         
     def generate_response(self, user_input):
         try:
             template = f"""
+            Verifique se o {user_input} realmente é im alimento, se for retorne o contéudo encontrado no formato abaixo:
             Sobre {user_input}:
 
             **Nutrientes:**
@@ -24,13 +25,15 @@ class FoodChatbot:
 
             **Preparo:**
             {{preparo}}
+            
+            caso não seja um alimento, avise o usuário que o que foi solicitado não é um alimento
             """
             
             response = self.model.generate_content(
                 template,
                 generation_config=genai.types.GenerationConfig(
                     temperature=0.7,
-                    max_output_tokens=1000
+                    max_output_tokens=1200
                 )
             )
             
@@ -53,7 +56,7 @@ def create_interface():
         gr.Markdown("### 🍎 **Chatbot de Alimentos**")
         
         chatbot_ui = gr.Chatbot(
-            height=400,
+            height=600,
             bubble_full_width=False,
             show_label=True,
             avatar_images=[user_icon, bot_icon], 
