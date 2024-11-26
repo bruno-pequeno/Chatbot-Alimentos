@@ -19,7 +19,7 @@ class FoodChatbot:
             **Benefícios:**
             {{beneficios}}
 
-            **Receita simples com {user_input}**
+            **Receita simples com {user_input}: {{nome da receita}}**
             **Ingredientes:**
             {{ingredientes}}
 
